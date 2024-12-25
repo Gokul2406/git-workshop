@@ -1,6 +1,8 @@
 import { getAllArticles } from "@/lib/articles";
 import { notFound } from "next/navigation";
 import MarkdownIt from "markdown-it";
+import Markdown from 'react-markdown'
+
 
 const md = new MarkdownIt();
 
@@ -18,7 +20,7 @@ export default async function Article({ params }) {
     <div>
       <h1>{article.data.title}</h1>
       <p>{article.data.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: htmlConverter }}></div>
+      <Markdown>{article.content}</Markdown>
     </div>
   );
 }
