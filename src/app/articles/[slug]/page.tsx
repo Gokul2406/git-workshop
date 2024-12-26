@@ -12,7 +12,7 @@ async function fetchArticles(slug) {
 }
 
 export default async function Article({ params }) {
-  const article = await fetchArticles(params.slug);
+  const article = await fetchArticles((await params).slug);
   if (!article) notFound();
   const htmlConverter = md.render(article.content);
 
