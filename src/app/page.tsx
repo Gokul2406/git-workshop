@@ -1,41 +1,85 @@
+// src/app/page.tsx
 import Image from "next/image";
 import { VT323 } from "next/font/google";
 import { Roboto_Mono } from "next/font/google";
+import { getAllArticles } from "@/lib/articles";
+import ArticleCard from "@/components/ArticleCard";
 
 const VT323_font = VT323({
-  weight: "400"
-})
+  weight: "400",
+});
 
 const RobotoMono_font = Roboto_Mono({
-  weight: "700"
-})
+  weight: "700",
+});
 
 export default function Home() {
+  const articles = getAllArticles();
+
   return (
-    <div>
-      <div className="w-screen h-screen bg-homePage flex items-center justify-center flex-col p-2">
-        {/*
-      <div className="h-1/4 w-screen flex flex-row justify-evenly items-center">
-        <h1>Turing</h1>
-        <h1>Robotics</h1>
-      </div>
-      */}
-        <div className="h-3/4 flex items-center justify-center">
-          <h1 className={`${VT323_font.className} text-9xl [text-shadow:_0_9px_4px_rgb(194_36_147_/_1)]`}>CONVERGENCE</h1>
+    <div className="bg-[#1e1e2e] min-h-screen text-[#cdd6f4]">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 right-0 bg-[#181825] z-50 px-6 py-4 flex justify-between items-center">
+        <div className={`text-[#cba6f7] text-2xl font-bold `}>CONVERGENCE</div>
+        <div className="flex space-x-6">
+          <a
+            href="#home"
+            className="px-4 py-2 rounded-md transition-colors duration-300 text-[#bac2de] hover:bg-[#313244]"
+          >
+            Home
+          </a>
+          <a
+            href="#articles"
+            className="px-4 py-2 rounded-md transition-colors duration-300 text-[#bac2de] hover:bg-[#313244]"
+          >
+            Articles
+          </a>
         </div>
-        <footer className="h-1/4 flex items-center justify-center">
-          <Image
-            src="/arrow_down.svg"
-            width={50}
-            height={50}
-            alt="Arrow down button" />
-        </footer>
-      </div>
-      <div className="h-screen w-screen p-16">
-        <h1 className={`${RobotoMono_font.className} text-3xl [text-shadow:_0_5px_4px_rgb(194_36_147_/_1)]`}>latest articles</h1>
-      </div>
+      </nav>
+
+      {/* Hero Section (Full Screen) */}
+      <section
+        id="home"
+        className="h-screen flex flex-col justify-center items-center px-6"
+      >
+        <h1 className="text-8xl font-bold text-[#cba6f7] mb-6">CONVERGENCE</h1>
+        <p
+          className={`text-md text-center max-w-2xl ${RobotoMono_font.className}`}
+        >
+          Where technology meets innovation. A collaborative platform by the
+          Turing Club and Robotics Club showcasing cutting-edge research and
+          ideas in technology and IoT.
+        </p>
+        <div className="mt-12">
+          <a
+            href="#articles"
+            className="bg-[#f5c2e7] text-[#1e1e2e] px-6 py-3 rounded-md hover:bg-[#cba6f7] transition-colors duration-300"
+          >
+            Explore Articles
+          </a>
+        </div>
+      </section>
+
+      {/* Latest Articles Section */}
+      <section id="articles" className="min-h-screen bg-[#181825] py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-[#cba6f7] mb-12">
+            Latest Articles
+          </h2>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#181826] py-8 px-6 border-t border-[#313244]">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          <div className="text-[#cba6f7] text-xl font-bold mb-4 md:mb-0">
+            Convergence
+          </div>
+          <div className="text-[#a6adc8]">
+            A collaborative project by the Turing Club and Robotics Club
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
-
-
