@@ -1,4 +1,10 @@
-# Radiative Transfer
+---
+title: "What's radiative transfer you ask ?"
+date: "2024-11-05"
+author: "Some dude"
+synopsis: "Something about radiative transfer i believe"
+
+---
 
 Radiative transfer is the physical process that describes the propagation of radiation through a medium, considering absorption, emission, and scattering. It is a crucial concept in astrophysics, atmospheric science, and remote sensing. The fundamental equation governing radiative transfer is known as the **Radiative Transfer Equation (RTE)**:
 

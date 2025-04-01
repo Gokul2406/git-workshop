@@ -1,4 +1,9 @@
-# Basics of LAMMPS
+---
+title: "LAMMPS"
+date: "2024-11-05"
+author: "Aaradhya Sharma"
+synopsis: "About LAMMPS"
+---
 
 LAMMPS (Large-scale Atomic/Molecular Massively Parallel Simulator) is a powerful molecular dynamics simulation software widely used in material science, physics, and computational chemistry.
 

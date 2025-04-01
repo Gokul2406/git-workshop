@@ -20,8 +20,8 @@ export default function Home() {
     <div className="bg-[#1e1e2e] min-h-screen text-[#cdd6f4]">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 bg-[#181825] z-50 px-6 py-4 flex justify-between items-center">
-        <div className={`text-[#cba6f7] text-2xl font-bold `}>CONVERGENCE</div>
-        <div className="flex space-x-6">
+        <div className={`text-[#cba6f7] text-4xl font-bold `}>CONVERGENCE</div>
+        <div className="flex text-3xl space-x-6">
           <a
             href="#home"
             className="px-4 py-2 rounded-md transition-colors duration-300 text-[#bac2de] hover:bg-[#313244]"
@@ -66,6 +66,17 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-[#cba6f7] mb-12">
             Latest Articles
           </h2>
+          <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {articles.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  title={article.data.title}
+                  author={article.data.author}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
