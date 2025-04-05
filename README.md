@@ -25,3 +25,5 @@ To submit articles, you can write your article as a markdown file and submit a p
 - [ ] Possibly make separate routes for different articles from different clubs
 - [ ] Article submission guidelines
 
+# git-workshop
+a workshop in git amd github
