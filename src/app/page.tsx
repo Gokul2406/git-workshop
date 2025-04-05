@@ -1,9 +1,11 @@
+"use-client";
 // src/app/page.tsx
 import Image from "next/image";
 import { VT323 } from "next/font/google";
 import { Roboto_Mono } from "next/font/google";
 import { getAllArticles } from "@/lib/articles";
 import ArticleCard from "@/components/ArticleCard";
+import Button from "@/components/Button";
 
 const VT323_font = VT323({
   weight: "400",
